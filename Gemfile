@@ -17,6 +17,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'shoulda-matchers'
   gem 'figaro'
+  gem 'faraday'
 end
 
 group :development do
