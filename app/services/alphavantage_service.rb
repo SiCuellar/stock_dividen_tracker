@@ -1,5 +1,7 @@
 class AlphaVantageService
-  
+  def get_stock_data(stock)
+    get_json("query?function=SYMBOL_SEARCH&keywords=#{stock}&apikey=#{ENV["ALPHA_VANTAGE_API_KEY"]}")
+  end
 
 
   private
@@ -10,7 +12,7 @@ class AlphaVantageService
   end
 
   def conn
-    @conn = Faraday.new(url: "https://api.songkick.com/api/3.0/") do |faraday|
+    @conn = Faraday.new(url: "https://www.alphavantage.co/") do |faraday|
       faraday.adapter  Faraday.default_adapter
     end
   end
