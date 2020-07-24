@@ -7,6 +7,9 @@ class AlphaVantageService
     get_json("query?function=OVERVIEW&symbol=#{stock}&apikey=#{ENV["ALPHA_VANTAGE_API_KEY"]}")
   end
 
+  def get_balance_sheet(stock)
+    get_json("query?function=BALANCE_SHEET&symbol=#{stock}&apikey=#{ENV["ALPHA_VANTAGE_API_KEY"]}")
+  end
 
   private
 
