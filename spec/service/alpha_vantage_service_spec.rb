@@ -5,6 +5,7 @@ describe AlphaVantageService do
     service = AlphaVantageService.new
     stock_data = service.get_stock_data("BA")
 
-    expect(service).to be_an_instnace_of(AlphaVantageService)
+    expect(service).to be_an_instance_of(AlphaVantageService)
+    expect(stock_data[:bestMatches]).to be_a(Array)
   end
 end
