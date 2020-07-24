@@ -27,4 +27,13 @@ describe AlphaVantageService do
     expect(company_balance_sheet).to have_key(:annualReports)
     expect(company_balance_sheet[:annualReports].count).to eq(5)
   end
+
+  it 'gets balance sheets for companies' do
+    service = AlphaVantageService.new
+    company_balance_sheet = service.get_balance_sheet("DIS")
+
+    expect(company_balance_sheet).to have_key(:symbol)
+    expect(company_balance_sheet).to have_key(:annualReports)
+    expect(company_balance_sheet[:annualReports].count).to eq(5)
+  end
 end
