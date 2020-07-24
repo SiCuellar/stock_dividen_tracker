@@ -3,6 +3,10 @@ class AlphaVantageService
     get_json("query?function=SYMBOL_SEARCH&keywords=#{stock}&apikey=#{ENV["ALPHA_VANTAGE_API_KEY"]}")
   end
 
+  def get_company_overview(stock)
+    get_json("query?function=OVERVIEW&symbol=#{stock}&apikey=#{ENV["ALPHA_VANTAGE_API_KEY"]}")
+  end
+
 
   private
 
